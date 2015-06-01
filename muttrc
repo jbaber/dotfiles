@@ -1,0 +1,82 @@
+#Addressbook
+source ~/.mutt/aliases
+
+#Colors
+# source ~/.mutt/colors4
+# source ~/.mutt/colors6
+# source ~/.mutt/colors7
+source ~/.mutt/colors8
+
+#Turns on recording sent messages to outgoing
+set record=$MAILDIR/sent-mail
+
+#Try to set ~/mail/postponed as the postponed messages folder
+# set postponed=~/mail/postponed
+set postponed=$MAILDIR/postponed
+
+set editor=/usr/pkg/bin/vim
+
+#Don't ask me if I should append to the end of a file, just do it!
+unset confirmappend
+
+#Just move the messages and purge without asking
+set delete=yes
+
+# Try to prefer plain text to html when it's there
+# alternative_order text/enriched text/plain text application/postscript image/*
+
+# View html mails using lynx
+set implicit_autoview
+
+# Try not auto_viewing html
+auto_view text/html  application/x-pgp-message
+auto_view application/x-pgp-message
+set mailcap_path="~/.mutt/mailcap"
+set mailcap_sanitize=yes
+
+# The addressbook file
+set alias_file=~/.mutt/aliases
+
+# Don't immediately jump to the next message
+set pager_stop=yes
+
+# Make the default sort by arrival instead of "threads"
+set sort=date-received
+
+# Which headers to show and hide
+ignore *
+unignore To From Sender Subject Cc
+
+# Show the following kinds of attachments inline
+auto_view text/html
+
+# Don't ask to move read messages to mbox on exit
+set move=no
+set mbox=$MAILDIR/mbox
+
+# Random signature
+set signature="$HOME/bin/s|"
+
+# Try to make space go to next page
+# Didn't work!
+#bind generic <space> next-page
+
+# Don't wait more than a second for confirmation that the mail got sent by mx
+set sendmail_wait=-1
+
+# Don't wrap lines intelligently, just at the edge.
+set smart_wrap=no
+# Would put '+' at the beginning of a line that's been wrapped
+set markers=no
+
+# Make it so d actually goes out to the index and deletes the message
+# macro pager d <exit><delete-message> "delete current message and exit to index"
+# Do it to 'D' instead
+macro pager D <exit><delete-message> "delete current message and exit to index"
+
+# Per http://www.mail-archive.com/mutt-users@mutt.org/msg32000.html
+# Try to make dates look like EST
+set pager_format="%4C %Z %[!%b %e at %I:%M %p]  %.20n  %s"
+
+# Local to the machine settings
+source ~/muttrcs/local_muttrc_0
