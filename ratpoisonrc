@@ -1,0 +1,102 @@
+# Change the display settings
+# exec xrandr --size 1024x768 --rate 60
+
+# Rat only around as long as needed
+# exec unclutter -idle 1 -jitter 2 -root
+
+exec xbindkeys
+
+# Bigger ratpoison font (Stupid resolution on inspiron)
+set font Mono-20
+
+# This isn't that necessary since 'unclutter' seems to be working.
+# Although where it's running from I'll never know!
+# addhook switchwin banish
+
+addhook switchwin gravity c
+
+startup_message off
+
+set framesels "snthaoeuidlrcgyfqjkxbmwvz"
+set bargravity s
+
+alias screendump exec FH=xwd-$(date +%s)$$; xwd -root > /tmp/$USER-$FH; xwdtopnm /tmp/$USER-$FH > /tmp/$USER-$FH.pnm; rm -f /tmp/$USER-$FH; pnmtopng /tmp/$USER-$FH.pnm > $HOME/$USER-$FH.png; rm -f /tmp/$USER-$FH.pnm
+
+bind C-M-3 screendump
+# C-t ` forces screen into sleeping
+bind grave exec xset dpms force off
+bind f exec firefox
+bind c exec roxterm
+# I accidentally quit all the time
+# bind q quit
+
+###Showroot script
+bind C-b exec toggleroot
+# alias showroot exec ratpoison -c fdump > .rpfdump; ratpoison -c 'select -' -c only
+# alias unshowroot exec ratpoison -c "frestore `cat .rpfdump`"
+# bind C-b showroot
+# bind M-b unshowroot
+
+# Open `otaku` in a new terminal
+alias otaku exec term otaku
+
+# Removes C-t t ability!
+# alias meta exec term meta
+
+alias bashmount exec term bashmount
+
+banish
+exec wireless
+# exec gnome-power-manager
+
+exec conky &
+
+exec xmodmap /home/jbaber/.Xmodmap &
+exec numlockx on &
+
+# Clock doesn't work with this for some reason
+# exec /home/jbaber/clock &
+
+# exec xfce4-power-manager
+
+# Stop blanking the dang screen!
+exec xset -dpms
+
+# exec keynav
+# exec sticky_keys
+
+bind w exec expose
+bind W windows
+
+# Tricks from http://thinkmoult.com/2009/05/13/ratpoison-an-efficient-and-minimalist-wm/
+# vim-like bindings
+unbind k
+bind j focusdown
+bind h focusleft
+bind k focusup
+bind l focusright
+bind J exchangedown
+bind H exchangeleft
+bind K exchangeup
+bind L exchangeright
+bind C-k delete
+bind d delete
+# exec /usr/bin/rpws init 4 -k
+set winname class
+# defborder 0
+# defpadding 0 0 0 0
+# defbarpadding 0 0
+bind space exec xterm
+exec easystroke
+
+# More hotkeys
+definekey top s-Right next
+definekey top s-Left prev
+definekey top s-Up exec roxterm
+definekey top s-Down exec roxterm
+
+definekey top s-f exec firefox
+
+# Things local to my machine
+chdir
+source ratpoisonrcs/lappy
