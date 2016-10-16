@@ -4,6 +4,8 @@
 # Rat only around as long as needed
 # exec unclutter -idle 1 -jitter 2 -root
 
+# TODO Everything from xbindkeys can now be replaced by
+# native ratpoison top keymappings
 exec xbindkeys
 
 # Bigger ratpoison font (Stupid resolution on inspiron)
@@ -13,25 +15,38 @@ set font Mono-20
 # Although where it's running from I'll never know!
 # addhook switchwin banish
 
+# Make new windows center aligned
 addhook switchwin gravity c
 
+# Don't tell me "Welcome to ratpoison"
 startup_message off
 
-set framesels "snthaoeuidlrcgyfqjkxbmwvz"
+# Align the bar to the bottom center
 set bargravity s
 
+# Take a screenshot
 alias screendump exec FH=xwd-$(date +%s)$$; xwd -root > /tmp/$USER-$FH; xwdtopnm /tmp/$USER-$FH > /tmp/$USER-$FH.pnm; rm -f /tmp/$USER-$FH; pnmtopng /tmp/$USER-$FH.pnm > $HOME/$USER-$FH.png; rm -f /tmp/$USER-$FH.pnm
 
+# Take a screenshot
 bind C-M-3 screendump
+
 # C-t ` forces screen into sleeping
 bind grave exec xset dpms force off
-bind f exec firefox
+
+# C-t f lets you pick a window, not so useless.
+# bind f exec firefox
+
+# Change which characters are used for selecting frames
+set framesels "snthaoeuidlrcgyfqjkxbmwvz"
+
+# Use a non-default terminal
 bind c exec roxterm
+
 # I accidentally quit all the time
 # bind q quit
 
-###Showroot script
-bind C-b exec toggleroot
+#Showroot script
+bind C-b exec $HOME/platonicbin/toggleroot
 # alias showroot exec ratpoison -c fdump > .rpfdump; ratpoison -c 'select -' -c only
 # alias unshowroot exec ratpoison -c "frestore `cat .rpfdump`"
 # bind C-b showroot
@@ -45,13 +60,18 @@ alias otaku exec term otaku
 
 alias bashmount exec term bashmount
 
+# Send the rat to the SE corner of the screen
 banish
-exec wireless
+
+exec $HOME/platonicbin/wireless
 # exec gnome-power-manager
 
 exec conky &
 
+# Possibly map escape to caps lock
 exec xmodmap /home/jbaber/.Xmodmap &
+
+# Turn numlock on
 exec numlockx on &
 
 # Clock doesn't work with this for some reason
@@ -65,7 +85,10 @@ exec xset -dpms
 # exec keynav
 # exec sticky_keys
 
+# Show list of windows to choose
 bind w exec expose
+
+# List windows
 bind W windows
 
 # Tricks from http://thinkmoult.com/2009/05/13/ratpoison-an-efficient-and-minimalist-wm/
@@ -88,6 +111,19 @@ set winname class
 # defbarpadding 0 0
 bind space exec xterm
 exec easystroke
+
+# Map F3 to ctrl-t !
+definekey top F3 exec
+
+# Map F4 to ctrl-t :
+definekey top F4 colon
+
+# Map F5 to ctrl-t
+definekey top F5 readkey root
+bind F5 other
+
+# Shock other users slightly less by having alt-tab cycle through windows
+definekey top M-Tab next
 
 # More hotkeys
 definekey top s-Right next
