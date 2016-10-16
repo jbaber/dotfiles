@@ -106,8 +106,8 @@ map ,k <C-w>k
 map ,l <C-w>l
 
 " Shortcuts
-map ,ce :e
-map ,cte :tabedit
+map ,ce :e 
+map ,cte :tabedit 
 map ,cw :w<Enter>
 map ,cq <c-w>q<Enter>
 map ,v <c-w>v
