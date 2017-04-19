@@ -1,6 +1,6 @@
-My dotfiles.  I make hardlinks via for instance
+My dotfiles.  I make softlinks via for instance
 
-    $ cp -l vimrc $HOME/.vimrc
+    $ cp -s vimrc $HOME/.vimrc
 
 Most of my dotfiles have a
 
