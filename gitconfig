@@ -5,4 +5,4 @@ lg = !"git lg1"
 
 # Things for the local machine
 [include]
-  path = gitconfigs/lappy
+  path = ~/.local/conf/gitconfig
