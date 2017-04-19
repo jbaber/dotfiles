@@ -94,9 +94,9 @@ set scrolloff=6 "Set to 999 to get center of screen cursor position at all times
 set t_Co=256
 syntax on
 
-" Try to use numbers.vim to get relative line numbering
-call pathogen#infect()
-" set number
+" Comment this out if you're not using vimpathogen
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
 
 " Shortcuts for moving around windows without pressing shift.
 map ,w <C-w>
