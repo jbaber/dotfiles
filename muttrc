@@ -79,4 +79,4 @@ macro pager D <exit><delete-message> "delete current message and exit to index"
 set pager_format="%4C %Z %[!%b %e at %I:%M %p]  %.20n  %s"
 
 # Local to the machine settings
-source ~/muttrcs/local_muttrc_0
+source ~/.local/conf/muttrc
