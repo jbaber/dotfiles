@@ -6,7 +6,7 @@
 
 # TODO Everything from xbindkeys can now be replaced by
 # native ratpoison top keymappings
-exec xbindkeys
+# exec xbindkeys
 
 # Bigger ratpoison font (Stupid resolution on inspiron)
 set font Mono-20
@@ -31,7 +31,7 @@ alias screendump exec FH=xwd-$(date +%s)$$; xwd -root > /tmp/$USER-$FH; xwdtopnm
 bind C-M-3 screendump
 
 # C-t ` forces screen into sleeping
-bind grave exec xset dpms force off
+# bind grave exec xset dpms force off
 
 # C-t f lets you pick a window, not so useless.
 # bind f exec firefox
