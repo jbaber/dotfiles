@@ -4,7 +4,7 @@ My dotfiles.  I make softlinks via for instance
 
 Most of my dotfiles have a
 
-    source some local .rc file
+    source $HOME/.local/conf/vimrc
 
-line in them so I can store messy settings I don't want to
+type line in them so I can store messy settings I don't want to
 share on the internet.
