@@ -123,4 +123,4 @@ filetype plugin on
 " set omnifunc=syntaxcomplete#Complete
 
 " Local to the machine settings
-source ~/vimrcs/local_vimrc_0
+source ~/.local/conf/vimrc
