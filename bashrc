@@ -13,6 +13,9 @@ HISTFILESIZE=2000
 
 PS1='$ '
 
+# Local manpages
+MANPATH=$MANPATH:$HOME/man
+
 alias l=ls
 alias p=vim
 
@@ -20,6 +23,9 @@ alias p=vim
 set -o vi
 
 # version controlled bin directory
+PATH=$HOME/platonicbin_public:$PATH
+
+# other version controlled bin directory
 PATH=$HOME/platonicbin:$PATH
 
 # local bin directory
