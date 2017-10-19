@@ -18,6 +18,8 @@ MANPATH=$MANPATH:$HOME/man
 
 alias l=ls
 alias p=vim
+#don't keep .core files
+ulimit -c 0
 
 # vi editing mode for command line
 set -o vi
