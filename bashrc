@@ -86,6 +86,8 @@ complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 # Set vtty font to this big one
 setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
 
+# Customize vtty color
+setvtrgb $HOME/vtty_colors
 
 # For local stuff
 source $HOME/.local/conf/bashrc
