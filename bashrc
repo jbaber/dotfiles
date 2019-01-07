@@ -83,5 +83,9 @@ function marks {
 complete -W "$(find $MARKPATH -type l -printf "%f\n")" jump
 complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 
+# Set vtty font to this big one
+setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
+
+
 # For local stuff
 source $HOME/.local/conf/bashrc
