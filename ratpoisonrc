@@ -110,7 +110,7 @@ set winname class
 # defpadding 0 0 0 0
 # defbarpadding 0 0
 bind space exec xterm
-exec easystroke
+# exec easystroke
 
 # Map F3 to ctrl-t !
 definekey top F3 exec
