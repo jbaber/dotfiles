@@ -94,5 +94,9 @@ if [[ $TERM = "linux" ]]; then
   setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
 fi
 
+# git version dotfiles with a special `config` command that
+# eliminates the need for symlinks
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 # For local stuff
 source $HOME/.local/conf/bashrc
