@@ -89,5 +89,10 @@ setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
 # Customize vtty color
 setvtrgb $HOME/vtty_colors
 
+# vty font (size and font)
+if [[ $TERM = "linux" ]]; then
+  setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
+fi
+
 # For local stuff
 source $HOME/.local/conf/bashrc
