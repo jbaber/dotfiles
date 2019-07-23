@@ -86,12 +86,10 @@ complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 # Set vtty font to this big one
 setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
 
-# Customize vtty color
-setvtrgb $HOME/vtty_colors
-
-# vty font (size and font)
+# vty font (size and font) and color
 if [[ $TERM = "linux" ]]; then
   setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
+  setvtrgb $HOME/vtty_colors
 fi
 
 # git version dotfiles with a special `config` command that
