@@ -21,7 +21,6 @@ alias p=vim
 #don't keep .core files
 ulimit -c 0
 
-TERM=xterm-color
 #Set the time zone.
 TZ=EST5EDT
 
@@ -84,12 +83,14 @@ complete -W "$(find $MARKPATH -type l -printf "%f\n")" jump
 complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 
 # Set vtty font to this big one
-setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
+# setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
 
 # vty font (size and font) and color
 if [[ $TERM = "linux" ]]; then
   setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
   setvtrgb $HOME/vtty_colors
+else
+  TERM=xterm-color
 fi
 
 # git version dotfiles with a special `config` command that
