@@ -40,7 +40,7 @@ bind C-M-3 screendump
 set framesels "snthaoeuidlrcgyfqjkxbmwvz"
 
 # Use a non-default terminal
-bind c exec roxterm
+bind c exec lxterminal
 
 # I accidentally quit all the time
 # bind q quit
