@@ -63,7 +63,6 @@ alias bashmount exec term bashmount
 # Send the rat to the SE corner of the screen
 banish
 
-exec $HOME/platonicbin/wireless
 # exec gnome-power-manager
 
 exec conky &
@@ -128,8 +127,6 @@ definekey top M-Tab next
 # More hotkeys
 definekey top s-Right next
 definekey top s-Left prev
-definekey top s-Up exec roxterm
-definekey top s-Down exec roxterm
 
 definekey top s-f exec firefox
 
