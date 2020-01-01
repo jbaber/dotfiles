@@ -113,7 +113,8 @@ map ,cw :w<Enter>
 map ,cq <c-w>q<Enter>
 map ,v <c-w>v
 map ,s <c-w>s
-map ,co :
+map ,co q:
+map ,coo q:
 map ,/ q/
 
 " Make Ctrl-j and Ctrl-k move the page up and down
