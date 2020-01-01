@@ -95,7 +95,9 @@ syntax on
 
 " Comment this out if you're not using vimpathogen
 " https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
+" Nobody should ever use vim-pathogen again, now you can just
+" git clone into subdirectories of $HOME/.vim/pack
 
 " Shortcuts for moving around windows without pressing shift.
 map ,w <C-w>
