@@ -30,7 +30,6 @@ set shiftwidth=2
 " Pressing <tab> translates to two spaces.  Now you must type Ctrl-v then tab
 " to get a real tab character.
 set expandtab
-set tabstop=2
 " Pressing <tab> moves the cursor two spaces
 set tabstop=2
 " >>, <<, and <tab> move to a multiple of two spaces to keep things aligned
