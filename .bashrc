@@ -97,5 +97,13 @@ fi
 # eliminates the need for symlinks
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias ,ga='git add'
+alias ,gs='git status'
+alias ,gcm='git commit -m'
+alias ,gp='git pull'
+alias ,gpush='git push'
+alias lg='git lg'
+alias ,lg='git lg'
+
 # For local stuff
 source $HOME/.local/conf/bashrc
