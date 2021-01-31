@@ -39,6 +39,9 @@ PATH=$HOME/bin:$PATH
 # pip installed things
 PATH=$PATH:$HOME/.local/bin
 
+# rust bin directory
+PATH=$PATH:$HOME/.cargo/bin
+
 # Paul's discovery
 alias rsynccopy="rsync --partial --progress --append --rsh=ssh -r -h "
 alias rsyncmove="rsync --partial --progress --append --rsh=ssh -r -h --remove-sent-files"
