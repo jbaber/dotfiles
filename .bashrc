@@ -90,7 +90,7 @@ complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 
 # vty font (size and font) and color
 if [[ $TERM = "linux" ]]; then
-  setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
+  # setfont -h32 /usr/share/kbd/consolefonts/ter-132n.psf.gz
   setvtrgb $HOME/vtty_colors
 else
   TERM=xterm-color
