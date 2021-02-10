@@ -8,4 +8,9 @@ share on the internet.
 The dotfiles check out directly to my $HOME without symlinks or
 anything using the method outlined [at this blogpost].
 
+On a new machine, I must
+
+    git clone --bare <git-repo-url> $HOME/.cfg
+
+
 [at this blogpost]: https://www.atlassian.com/git/tutorials/dotfiles
