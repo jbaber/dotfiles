@@ -40,7 +40,7 @@ bind C-M-3 screendump
 set framesels "snthaoeuidlrcgyfqjkxbmwvz"
 
 # Use a non-default terminal
-bind c exec term
+bind c exec mlterm
 
 # I accidentally quit all the time
 # bind q quit
