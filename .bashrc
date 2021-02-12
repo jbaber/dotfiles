@@ -107,6 +107,7 @@ alias ,gp='git pull'
 alias ,gpush='git push'
 alias lg='git lg'
 alias ,lg='git lg'
+alias ..='cd ..'
 
 # For local stuff
 source $HOME/.local/conf/bashrc
