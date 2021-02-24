@@ -116,6 +116,8 @@ map ,s <c-w>s
 map ,co q:
 map ,coo q:
 map ,/ q/
+map ,vt :vertical terminal<Enter>
+map ,te :terminal<Enter>
 
 " Make Ctrl-j and Ctrl-k move the page up and down
 map <C-k> <C-y>
