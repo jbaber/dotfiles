@@ -109,5 +109,8 @@ alias lg='git lg'
 alias ,lg='git lg'
 alias ..='cd ..'
 
+# Make rust stuff from rustup part of the $PATH
+source "$HOME/.cargo/env"
+
 # For local stuff
 source $HOME/.local/conf/bashrc
