@@ -112,5 +112,12 @@ alias ..='cd ..'
 # Make rust stuff from rustup part of the $PATH
 source "$HOME/.cargo/env"
 
+# Install zoxide via cargo for this to work
+# cargo install zoxide
+eval "$(zoxide init bash)"
+
+# fzf fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # For local stuff
 source $HOME/.local/conf/bashrc
