@@ -11,7 +11,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-PS1='$ '
+PS1='\[\033[31m\]\w\[\033[0m\] ($(git symbolic-ref --short HEAD 2>/dev/null)) \[\e[31m\]/\[\e[0m\] '
+
+
 
 # Local manpages
 MANPATH=$MANPATH:$HOME/man
@@ -88,6 +90,18 @@ complete -W "$(find $MARKPATH -type l -printf "%f\n")" j
 
 # Set vtty font to this big one
 # setfont /usr/share/consolefonts/Lat2-TerminusBold32x16.psf.gz
+
+PROMPT_COMMAND='ls_on_enter'
+
+# When I just press enter, do `ls`
+ls_on_enter() {
+  cmd_index=$(history 1 |awk '{print $1}')
+  # if [[ ${last_cmd_index} =~ ^[0-0+$ ]] && [ "${cmd_index}" -eq "${last_cmd_index}" ]; then
+  if [ "${cmd_index}" -eq "${last_cmd_index}" ]; then
+    ls
+  fi
+  last_cmd_index=${cmd_index}
+}
 
 # vty font (size and font) and color
 if [[ $TERM = "linux" ]]; then
