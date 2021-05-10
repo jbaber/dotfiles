@@ -21,6 +21,7 @@ alias p=vim
 #don't keep .core files
 ulimit -c 0
 
+TERM=xterm-color
 #Set the time zone.
 TZ=EST5EDT
 
@@ -99,6 +100,11 @@ fi
 # git version dotfiles with a special `config` command that
 # eliminates the need for symlinks
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+function .. { cd '..'; }
+function ../.. { cd '../..'; }
+function ../../.. { cd '../../..'; }
+function ../../../.. { cd '../../../..'; }
 
 alias ,ga='git add'
 alias ,gs='git status'
