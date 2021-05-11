@@ -137,7 +137,7 @@ source "$HOME/.cargo/env"
 eval "$(zoxide init bash)"
 
 # fzf fuzzy finder
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # For local stuff
 source $HOME/.local/conf/bashrc
