@@ -97,7 +97,7 @@ PROMPT_COMMAND='ls_on_enter'
 ls_on_enter() {
   cmd_index=$(history 1 |awk '{print $1}')
   # if [[ ${last_cmd_index} =~ ^[0-0+$ ]] && [ "${cmd_index}" -eq "${last_cmd_index}" ]; then
-  if [ "${cmd_index}" -eq "${last_cmd_index}" ]; then
+  if [[ "${cmd_index}" -eq "${last_cmd_index}" ]]; then
     ls
   fi
   last_cmd_index=${cmd_index}
